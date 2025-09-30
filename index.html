@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guapas Cosmeticos - Centro de Comando</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="sidebar" id="sidebar">
+        <div class="logo"><i class="fas fa-gem"></i> Guapas</div>
+        <nav id="sidebar-nav">
+            <a data-section="dashboard" class="active" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a data-section="mensajes" href="#"><i class="fas fa-comments"></i> Mensajes</a>
+            <a data-section="programador" href="#"><i class="fas fa-calendar-alt"></i> Programador</a>
+            <a data-section="estadisticas" href="#"><i class="fas fa-chart-line"></i> Estadísticas</a>
+            <a data-section="configuracion" href="#"><i class="fas fa-cog"></i> Configuración</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        <header class="header">
+            <i class="fas fa-bars hamburger-menu" id="hamburger-menu"></i>
+            <h1 id="section-title">Centro de Conexiones</h1>
+        </header>
+
+        <section id="dashboard-section" class="content-section" style="display: block;">
+            <div class="card">
+                <h2><i class="fas fa-plug"></i> Conecta Tus Canales</h2>
+                <div class="connections-hub">
+                    <div class="connection-card" id="whatsapp-card"><div class="icon" style="color: var(--whatsapp-color);"><i class="fab fa-whatsapp"></i></div><div class="account-info"><div id="whatsapp-default-name">WhatsApp</div><div id="whatsapp-verified-view" class="hidden"><span>Guapas Cosmeticos<i class="fas fa-check-circle verification-badge"></i></span><div class="account-number">+58 412 6529486</div></div></div><div class="status disconnected" id="whatsapp-status"><span class="status-dot"></span><span>Desconectado</span></div><div class="connection-btn-group"><button class="btn btn-connect connect" data-platform="whatsapp" data-action="connect">Conectar</button></div></div>
+                    <div class="connection-card" id="instagram-card"><div class="icon" style="color: var(--instagram-color);"><i class="fab fa-instagram"></i></div><h3 class="account-info" data-default-name="Instagram">Instagram</h3><div class="status disconnected" id="instagram-status"><span class="status-dot"></span><span>Desconectado</span></div><div class="connection-btn-group"><button class="btn btn-connect connect" data-platform="instagram" data-action="connect">Conectar</button></div></div>
+                    <div class="connection-card" id="facebook-card"><div class="icon" style="color: var(--facebook-color);"><i class="fab fa-facebook-messenger"></i></div><h3 class="account-info" data-default-name="Facebook">Facebook</h3><div class="status disconnected" id="facebook-status"><span class="status-dot"></span><span>Desconectado</span></div><div class="connection-btn-group"><button class="btn btn-connect connect" data-platform="facebook" data-action="connect">Conectar</button></div></div>
+                    <div class="connection-card" id="webchat-card"><div class="icon" style="color: var(--info-color);"><i class="fas fa-globe"></i></div><h3 class="account-info" data-default-name="Web Chat">Web Chat</h3><div class="status disconnected" id="webchat-status"><span class="status-dot"></span><span>Desconectado</span></div><div class="connection-btn-group"><button class="btn btn-connect connect" data-platform="webchat" data-action="connect">Conectar</button></div></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="mensajes-section" class="content-section" style="display: none;">
+             <div class="card chat-layout" id="chat-layout">
+                <div class="chat-list-panel">
+                    <div class="chat-tabs">
+                        <div class="chat-tab active" data-channel="all">Todos</div>
+                        <div class="chat-tab" data-channel="whatsapp">WhatsApp</div>
+                        <div class="chat-tab" data-channel="instagram">Instagram</div>
+                        <div class="chat-tab" data-channel="facebook">Facebook</div>
+                        <div class="chat-tab" data-channel="webchat">WebChat</div>
+                    </div>
+                    <div class="conversations-list" id="conversations-list"></div>
+                </div>
+                <div class="chat-conversation-panel">
+                    <div class="chat-conversation-header" id="conversation-header"><span>Seleccione una conversación</span></div>
+                    <div id="full-chat-view">
+                        </div>
+                    <div class="human-response-area">
+                        <input type="text" id="human-reply-input" placeholder="Escriba su respuesta..." disabled>
+                        <div class="response-button-group">
+                            <button id="send-human-reply-btn" class="btn btn-primary" disabled><i class="fas fa-paper-plane"></i></button>
+                            <button id="take-over-btn" class="btn btn-primary"><i class="fas fa-headset"></i></button>
+                            <button id="end-convo-btn" class="btn btn-destructive-outline"><i class="fas fa-check-circle"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="programador-section" class="content-section" style="display: none;"></section>
+        <section id="estadisticas-section" class="content-section" style="display: none;"></section>
+        <section id="configuracion-section" class="content-section" style="display: none;"></section>
+    </main>
+    
+    <div id="notification-container"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
